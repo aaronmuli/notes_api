@@ -1,0 +1,220 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    /* position: fixed; */
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+header .nav_items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header .nav_items .nav_item {
+    font-size: medium;
+    margin: 20px;
+}
+
+header .nav_items .nav_item a:hover {
+    color: #6d6d6d;
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.register_section {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register_section .heading {
+    color: #adadad;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.register_section .heading_main {
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.form_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_section input {
+    width: 250%;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #f5f5f5;
+    color: black;
+    font-size: 15px;
+}
+
+.form_section input:focus {
+    border: 1px solid #fff;
+}
+
+.form_section button {
+    width: 270%;
+    padding: 13px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.form_section button:hover {
+    background-color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    color: #fff;
+    background-color: #1d1d1d;
+    cursor: pointer;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.note-container .note-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-container .note-form  textarea{
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #f5f5f5;
+    color: black;
+    font-size: 15px;
+}
+
+.note-container .note-form button{
+    width: 100%;
+    padding: 13px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.note-container .note-form button:hover {
+    background-color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+    cursor: pointer;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #c7c7c7;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.grid-item .note-paragraph {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.grid-item .note-createdAt {
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+.grid-container {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+.loadingSpinnerContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loadingSpinner {
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: #000 transparent #555 transparent;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
