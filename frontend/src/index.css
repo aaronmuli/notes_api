@@ -187,6 +187,15 @@ a {
     gap: 10px;
 }
 
+.close-btn {
+    position: relative;
+    top: 0px;
+    left: 150px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
 
 .loadingSpinnerContainer {
     position: fixed;

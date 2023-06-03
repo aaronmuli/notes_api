@@ -74,6 +74,7 @@ const Dashboard = () => {
             notes.length > 0 ? (
               notes.map((note) => (
                 <div className='grid-item' key={note._id}>
+                  <p className='close-btn'>X</p>
                   <p className='note-paragraph'>{note.text}</p>
                   <p className='note-createdAt'>{note.createdAt}</p>
                 </div>
