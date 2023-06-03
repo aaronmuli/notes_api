@@ -14,13 +14,15 @@ const Header = () => {
   const logoutUser = () => {
     dispatch(logout());  
     dispatch(reset());
-    
+    navigate('/');
   }
 
   return (
     <header>
         <div className="logo">
-          <Link to='/'>Notes</Link>
+          {
+            user ? (<Link to='/'>Notes</Link>) : (<Link to='/login'>Notes</Link>)
+          }
         </div>
         <div>
         {

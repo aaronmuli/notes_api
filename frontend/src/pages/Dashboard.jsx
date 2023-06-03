@@ -11,7 +11,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.auth);
-  const {notes, isLoading, isError, isSuccess, message} = useSelector((state) => state.notes)
+  const {notes, isLoading, isError, message} = useSelector((state) => state.notes)
 
   
   const [noteData, setNoteData] = useState('');
@@ -25,13 +25,15 @@ const Dashboard = () => {
     if(!user) {
       navigate('/login');
     }
+    
+    if(!isError && user) {
+      dispatch(getAllNotes());
 
-
-    dispatch(getAllNotes());
-
-    return () => {
-      dispatch(reset());
+      return () => {
+        dispatch(reset());
+      }
     }
+
   }, [user, navigate, dispatch, isError, message]);
 
 
