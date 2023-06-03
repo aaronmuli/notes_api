@@ -26,12 +26,13 @@ const Dashboard = () => {
       navigate('/login');
     }
 
+
     dispatch(getAllNotes());
 
     return () => {
       dispatch(reset());
     }
-  }, [user, navigate, dispatch, notes, isError, message]);
+  }, [user, navigate, dispatch, isError, message]);
 
 
   const onChangeHandler = (e) => {

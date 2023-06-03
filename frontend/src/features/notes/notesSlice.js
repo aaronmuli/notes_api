@@ -25,7 +25,8 @@ export const addNote = createAsyncThunk("notes/add", async (noteData, thunkAPI) 
 // get notes
 export const getAllNotes = createAsyncThunk('notes/getAll', async (_,thunkAPI) => {
     try {
-        const token = thunkAPI.getState().auth.token;
+        const token = thunkAPI.getState().auth.user.token;
+        console.log(token);
         return await notesService.getAllNotes(token);
     } catch (error) {
         const message = (error.response.data && 
@@ -39,7 +40,12 @@ export const notesSlice = createSlice({
     name: 'notes',
     initialState,
     reducers: {
-        reset: (state) => initialState,
+        reset: (state) => {
+            state.isLoading = false,
+            state.isSuccess = false,
+            state.isError = false,
+            state.message = ''
+        },
     },
     extraReducers: (builder) => {
         builder
