@@ -3,7 +3,6 @@
 }
 
 header {
-    /* position: fixed; */
     margin: 0;
     padding: 0;
     height: 80px;
@@ -238,4 +237,97 @@ a {
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  @media  only screen and (max-width: 768px) {
+    header {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    header .nav_items .nav_item {
+        font-size: medium;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+    
+    .register_section {
+        padding: 5px;
+    }
+    
+    .register_section .heading {
+        padding: 5px;
+        font-size: 15px;
+    }
+    
+    .register_section .heading_main {
+        font-size: 20px;
+    }
+    
+    .form_section input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .form_section input:focus {
+        border: 1px solid #fff;
+    }
+    
+    .form_section button {
+        width: 100%;
+        padding: 13px;
+        font-size: 16px;
+    }
+    
+    .form_section button:hover {
+        background-color: #1d1d1d;
+        border: 1px solid #1d1d1d;
+        cursor: pointer;
+    }
+    
+    .note-container .note-form  textarea{
+        width: 70%;
+        padding: 17px;
+        margin-bottom: 15px;
+    }
+    
+    .note-container .note-form button{
+        width: 75%;
+        padding: 13px;
+        font-size: 15px;
+    }
+    
+    .grid-item {
+        padding: 10px;
+    }
+      
+    .grid-container {
+        padding-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5px;
+    }
+    
+    .notes-notify {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+    }
+      
+      .loadingSpinner {
+        width: 55px;
+        height: 55px;
+        border: 5px solid;
+        border-color: #000 transparent #555 transparent;
+        border-radius: 50%;
+        animation: spin 1.2s linear infinite;
+      }
+    
   }
