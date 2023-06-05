@@ -196,6 +196,18 @@ a {
     background: none;
 }
 
+.notes-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-notify {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
 
 .loadingSpinnerContainer {
     position: fixed;
