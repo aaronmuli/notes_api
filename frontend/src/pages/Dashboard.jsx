@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
-import { addNote, getAllNotes, reset } from '../features/notes/notesSlice';
+import { addNote, getAllNotes, deleteNote, reset } from '../features/notes/notesSlice';
 import { toast } from 'react-toastify';
 import Spinner from '../components/Spinner';
 
@@ -39,8 +39,8 @@ const Dashboard = () => {
 
   const onChangeHandler = (e) => {
     setNoteData(e.target.value);
-    // console.log(e.target.value);
   }
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -50,6 +50,7 @@ const Dashboard = () => {
     }
 
     dispatch(addNote(note));
+    setNoteData('');
   }
 
   if(isLoading) {
@@ -64,7 +65,7 @@ const Dashboard = () => {
       </div>
       <div className='note-container'>
         <form className='note-form' onSubmit={submitHandler}>
-          <textarea id='note' name='note' rows={4} cols={50} placeholder='type a note ...' onChange={onChangeHandler} required/>
+          <textarea id='note' name='note' value={noteData} rows={4} cols={50} placeholder='type a note ...' onChange={onChangeHandler} required/>
           <button type='submit'>add note</button>
         </form>
       </div>
@@ -74,7 +75,7 @@ const Dashboard = () => {
             notes.length > 0 ? (
               notes.map((note) => (
                 <div className='grid-item' key={note._id}>
-                  <p className='close-btn'>X</p>
+                  <p className='close-btn' onClick={() => dispatch(deleteNote(note._id))}>X</p>
                   <p className='note-paragraph'>{note.text}</p>
                   <p className='note-createdAt'>{note.createdAt}</p>
                 </div>
